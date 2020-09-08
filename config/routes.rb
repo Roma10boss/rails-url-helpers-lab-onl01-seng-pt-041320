@@ -1,4 +1,7 @@
+
 Rails.application.routes.draw do
-  get 'student/:id/activate', to: 'students#activate', as: 'activate_student'
-  resources :students, only: [:index, :show]
+resources :students, only: :index #, as:'students'
+
+resources :students, only: :show #, as:'student'
+get 'students/:id/activate', to: 'students#activate', as:'activate-student'
 end
